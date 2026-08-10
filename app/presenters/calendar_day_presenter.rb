@@ -7,6 +7,8 @@ class CalendarDayPresenter
     @day = day
     @visits = Visit.on_day(day).includes(:member, :technician).chronological.to_a
     @costs = DriveCostService.new(@visits).by_technician
+    @open_slots = OpenSlotsService.new(@visits).fillable_slots
+    @suggestions = WaitlistMatcherService.new.suggestions_for(@open_slots)
   end
 
   def as_props
@@ -18,13 +20,14 @@ class CalendarDayPresenter
       hours: hours,
       minutes_in_day: (hours.length - 1) * 60,
       technicians: technician_rows,
+      waitlist: WaitlistPresenter.new(slots: open_slots).as_props,
       summary: summary
     }
   end
 
   private
 
-  attr_reader :day, :visits, :costs
+  attr_reader :day, :visits, :costs, :open_slots, :suggestions
 
   def hours
     (Belle::DAY_START_HOUR..Belle::DAY_END_HOUR).map do |hour|
@@ -46,9 +49,41 @@ class CalendarDayPresenter
         drive: drive_props(technician),
         visits: technician_visits.map do |visit|
           VisitPresenter.new(visit).as_props.merge(lane: lanes.fetch(visit.id, 0))
-        end
+        end,
+        open_slots: open_slots.select { |slot| slot.technician == technician }
+                              .map { |slot| slot_props(slot, lanes) }
       }
     end
+  end
+
+  def slot_props(slot, lanes)
+    candidates = suggestions.fetch(slot.id, [])
+
+    {
+      id: slot.id,
+      time_label: local(slot.starts_at).strftime("%-l:%M %p"),
+      offset_minutes: offset_minutes(slot.starts_at),
+      duration_minutes: slot.duration_minutes,
+      lane: lanes.fetch(slot.visit.id, 0),
+      vacated_by: slot.member.name,
+      timeframe: slot.timeframe,
+      slack_minutes: slot.slack_minutes,
+      candidates: candidates.map { |candidate| candidate_props(candidate) }
+    }
+  end
+
+  def candidate_props(candidate)
+    {
+      request_id: candidate.request.id,
+      member_name: candidate.member.name,
+      member_age: candidate.member.age,
+      clinical_priority: candidate.request.clinical_priority,
+      distance_km: candidate.distance_km,
+      drive_minutes: candidate.drive_minutes,
+      reachable: candidate.reachable,
+      days_waiting: candidate.request.days_waiting,
+      reasons: candidate.reasons
+    }
   end
 
   def drive_props(technician)
@@ -82,6 +117,7 @@ class CalendarDayPresenter
 
     {
       total: visits.length,
+      open_slots: open_slots.length,
       drive_wasted_minutes: day_cost.wasted_minutes,
       drive_saved_minutes: day_cost.saved_minutes,
       completed: visits.count { |visit| visit.status == "completed" },
@@ -94,8 +130,12 @@ class CalendarDayPresenter
   def now_offset_minutes
     return nil unless local(Belle::CURRENT_TIME).to_date == day
 
-    day_opens = local(Belle::CURRENT_TIME).change(hour: Belle::DAY_START_HOUR)
-    ((local(Belle::CURRENT_TIME) - day_opens) / 60).round
+    offset_minutes(Belle::CURRENT_TIME)
+  end
+
+  def offset_minutes(time)
+    day_opens = local(time).change(hour: Belle::DAY_START_HOUR)
+    ((local(time) - day_opens) / 60).round
   end
 
   def local(time)

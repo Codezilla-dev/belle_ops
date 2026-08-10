@@ -1,10 +1,21 @@
 import VisitBlock from './VisitBlock'
+import OpenSlotBlock from './OpenSlotBlock'
 
 const PX_PER_MINUTE = 2.1
 const NAME_COLUMN_PX = 190
 const ROW_LANE_PX = 62
 
-export default function CalendarGrid({ hours, minutesInDay, technicians, nowOffsetMinutes, nowLabel, onSelectVisit, renderRowFooter }) {
+export default function CalendarGrid({
+  hours,
+  minutesInDay,
+  technicians,
+  nowOffsetMinutes,
+  nowLabel,
+  onSelectVisit,
+  onSelectSlot,
+  highlightedSlotId,
+  renderRowFooter,
+}) {
   const trackWidth = minutesInDay * PX_PER_MINUTE
 
   return (
@@ -70,6 +81,17 @@ export default function CalendarGrid({ hours, minutesInDay, technicians, nowOffs
                     pxPerMinute={PX_PER_MINUTE}
                     lanePx={ROW_LANE_PX}
                     onSelect={onSelectVisit}
+                  />
+                ))}
+
+                {technician.open_slots.map((slot) => (
+                  <OpenSlotBlock
+                    key={`slot-${slot.id}`}
+                    slot={slot}
+                    pxPerMinute={PX_PER_MINUTE}
+                    lanePx={ROW_LANE_PX}
+                    highlighted={slot.id === highlightedSlotId}
+                    onOpen={() => onSelectSlot(slot, technician)}
                   />
                 ))}
               </div>

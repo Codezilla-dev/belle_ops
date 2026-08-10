@@ -15,8 +15,9 @@ export default function DaySummary({ summary }) {
     <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
       <Stat label="Visits today" value={summary.total} />
       <Stat label="Completed" value={summary.completed} tone="text-emerald-700" />
-      <Stat label="Fell through" value={summary.fell_through} tone="text-rose-700" />
       <Stat label="Unconfirmed" value={summary.unconfirmed} tone="text-amber-700" />
+      <Stat label="Fell through" value={summary.fell_through} tone="text-rose-700" />
+      <Stat label="Open slots to fill" value={summary.open_slots} tone="text-indigo-700" />
       <Stat label="At risk, still ahead" value={summary.at_risk} tone="text-amber-700" />
       <Stat
         label="Drive minutes wasted"

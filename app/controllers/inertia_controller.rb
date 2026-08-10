@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class InertiaController < ApplicationController
-  # Share data with all Inertia responses
-  # see https://inertia-rails.dev/guide/shared-data
-  #   inertia_share user: -> { Current.user&.as_json(only: [:id, :name, :email]) }
+  # One-off confirmations ("Ada W. added to Priya N.'s 3:00 PM slot") ride along
+  # with every response so any page can surface them.
+  inertia_share flash: -> { { notice: flash.notice, alert: flash.alert } }
 end

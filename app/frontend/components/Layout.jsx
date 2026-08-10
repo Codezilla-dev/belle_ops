@@ -16,6 +16,24 @@ function NavLink({ href, children }) {
   )
 }
 
+function FlashToast() {
+  const { flash } = usePage().props
+  const message = flash?.notice ?? flash?.alert
+  if (!message) return null
+
+  return (
+    <div
+      className={`mb-4 rounded-lg border px-4 py-2.5 text-sm ${
+        flash.alert
+          ? 'border-rose-200 bg-rose-50 text-rose-900'
+          : 'border-emerald-200 bg-emerald-50 text-emerald-900'
+      }`}
+    >
+      {message}
+    </div>
+  )
+}
+
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
@@ -31,7 +49,10 @@ export default function Layout({ children }) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-none px-6 py-6">{children}</main>
+      <main className="mx-auto max-w-none px-6 py-6">
+        <FlashToast />
+        {children}
+      </main>
     </div>
   )
 }
