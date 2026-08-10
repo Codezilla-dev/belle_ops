@@ -2,6 +2,6 @@
 
 class DashboardController < InertiaController
   def show
-    render inertia: "Dashboard", props: { day: Belle::CURRENT_DAY.to_s }
+    render inertia: "Dashboard", props: CalendarDayPresenter.new.as_props
   end
 end
