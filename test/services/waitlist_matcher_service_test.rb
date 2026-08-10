@@ -17,7 +17,26 @@ class WaitlistMatcherServiceTest < ActiveSupport::TestCase
   test "a member who only wants mornings is not offered an afternoon slot" do
     build_request(timeframe: "morning", member: build_member(name: "Morning Only", lat: 32.931, lng: -83.701))
 
-    assert_empty WaitlistMatcherService.new.candidates_for(@slot)
+    # Still offered — the coordinator may know better — but not recommended, and
+    # the mismatch is spelled out rather than left for them to spot.
+    candidate = WaitlistMatcherService.new.candidates_for(@slot).sole
+
+    assert_equal "Morning Only", candidate.member.name
+    assert_not candidate.recommended
+    assert_not candidate.timeframe_match
+    assert_match(/Asked for morning/, candidate.warnings.join(" "))
+    assert_nil WaitlistMatcherService.new.best_for(@slot)
+  end
+
+  test "a good fit is recommended and ranked above anyone needing an override" do
+    build_request(timeframe: "morning", member: build_member(name: "Wrong Window", lat: 32.9305, lng: -83.7005))
+    build_request(timeframe: "afternoon", member: build_member(name: "Right Window", lat: 32.932, lng: -83.703))
+
+    candidates = WaitlistMatcherService.new.candidates_for(@slot)
+
+    assert_equal [ "Right Window", "Wrong Window" ], candidates.map { |c| c.member.name }
+    assert candidates.first.recommended
+    assert_not candidates.last.recommended
   end
 
   test "members who say any time are eligible" do
@@ -48,7 +67,7 @@ class WaitlistMatcherServiceTest < ActiveSupport::TestCase
     assert_equal "Close Routine", candidates.first.member.name
     assert candidates.first.reachable
     assert_not candidates.last.reachable
-    assert_match(/Too far/, candidates.last.reasons.join(" "))
+    assert_match(/only has \d+ min before they run late/, candidates.last.warnings.join(" "))
   end
 
   test "the nearest member wins among equals" do

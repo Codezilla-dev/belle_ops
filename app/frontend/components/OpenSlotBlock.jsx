@@ -2,7 +2,7 @@
 // occupy. If somebody on the waitlist fits, they're named right here so filling
 // it is one click rather than a hunt through a list.
 export default function OpenSlotBlock({ slot, pxPerMinute, lanePx, highlighted, onOpen }) {
-  const suggestion = slot.candidates[0]
+  const suggestion = slot.suggested_member_name
 
   return (
     <button
@@ -19,10 +19,12 @@ export default function OpenSlotBlock({ slot, pxPerMinute, lanePx, highlighted, 
       }`}
     >
       <span className="block truncate font-semibold">
-        {suggestion ? `+ ${suggestion.member_name}` : 'Open slot'}
+        {suggestion ? `+ ${suggestion}` : 'Open slot'}
       </span>
       <span className="block truncate opacity-80">
-        {suggestion ? `${slot.time_label} · fill` : `${slot.time_label} · no match`}
+        {suggestion
+          ? `${slot.time_label} · fill`
+          : `${slot.time_label} · ${slot.candidates.length} to choose from`}
       </span>
     </button>
   )

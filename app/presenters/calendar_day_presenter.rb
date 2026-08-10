@@ -40,7 +40,8 @@ class CalendarDayPresenter
 
     Technician.alphabetical.map do |technician|
       technician_visits = by_technician.fetch(technician, [])
-      lanes = assign_lanes(technician_visits)
+      technician_slots = open_slots.select { |slot| slot.technician == technician }
+      lanes = assign_lanes(technician_visits, technician_slots)
 
       {
         id: technician.id,
@@ -48,10 +49,9 @@ class CalendarDayPresenter
         lane_count: lanes.values.max.to_i + 1,
         drive: drive_props(technician),
         visits: technician_visits.map do |visit|
-          VisitPresenter.new(visit).as_props.merge(lane: lanes.fetch(visit.id, 0))
+          VisitPresenter.new(visit).as_props.merge(lane: lanes.fetch([ :visit, visit.id ], 0))
         end,
-        open_slots: open_slots.select { |slot| slot.technician == technician }
-                              .map { |slot| slot_props(slot, lanes) }
+        open_slots: technician_slots.map { |slot| slot_props(slot, lanes) }
       }
     end
   end
@@ -64,10 +64,13 @@ class CalendarDayPresenter
       time_label: local(slot.starts_at).strftime("%-l:%M %p"),
       offset_minutes: offset_minutes(slot.starts_at),
       duration_minutes: slot.duration_minutes,
-      lane: lanes.fetch(slot.visit.id, 0),
+      lane: lanes.fetch([ :slot, slot.id ], 0),
       vacated_by: slot.member.name,
       timeframe: slot.timeframe,
       slack_minutes: slot.drive_budget_minutes,
+      # The name we put on the calendar block, if we have one worth putting there.
+      # Everyone else is still one click away inside the slot.
+      suggested_member_name: candidates.find(&:recommended)&.member&.name,
       candidates: candidates.map { |candidate| candidate_props(candidate) }
     }
   end
@@ -81,8 +84,12 @@ class CalendarDayPresenter
       distance_km: candidate.distance_km,
       drive_minutes: candidate.drive_minutes,
       reachable: candidate.reachable,
+      timeframe_match: candidate.timeframe_match,
+      recommended: candidate.recommended,
+      preferred_timeframe: candidate.request.preferred_timeframe,
       days_waiting: candidate.request.days_waiting,
-      reasons: candidate.reasons
+      reasons: candidate.reasons,
+      warnings: candidate.warnings
     }
   end
 
@@ -97,16 +104,29 @@ class CalendarDayPresenter
     }
   end
 
-  # Visits at one address can overlap (a CHW sees both members of a household in
-  # a single stop), so stack overlapping blocks into lanes instead of letting
-  # them cover each other up.
-  def assign_lanes(technician_visits)
+  # Stack anything sharing a window into its own lane instead of letting blocks
+  # cover each other up. Two things cause overlap:
+  #
+  #   * a CHW seeing both members of a household in one stop, and
+  #   * an open slot, which sits in the same window as the visit that vacated it.
+  #     The cancelled visit has to stay visible — hiding it behind the slot makes
+  #     the row read as though the visit was never there.
+  #
+  # Slots sort after visits at the same time so the original visit keeps the top
+  # lane and the slot appears beneath it.
+  def assign_lanes(technician_visits, technician_slots)
+    blocks = technician_visits.map { |visit|
+      { key: [ :visit, visit.id ], starts_at: visit.scheduled_start, ends_at: visit.scheduled_end, slot: false }
+    } + technician_slots.map { |slot|
+      { key: [ :slot, slot.id ], starts_at: slot.starts_at, ends_at: slot.ends_at, slot: true }
+    }
+
     lane_ends = []
 
-    technician_visits.sort_by(&:scheduled_start).each_with_object({}) do |visit, lanes|
-      lane = lane_ends.index { |ends_at| ends_at <= visit.scheduled_start } || lane_ends.length
-      lane_ends[lane] = visit.scheduled_end
-      lanes[visit.id] = lane
+    blocks.sort_by { |block| [ block[:starts_at], block[:slot] ? 1 : 0 ] }.each_with_object({}) do |block, lanes|
+      lane = lane_ends.index { |ends_at| ends_at <= block[:starts_at] } || lane_ends.length
+      lane_ends[lane] = block[:ends_at]
+      lanes[block[:key]] = lane
     end
   end
 

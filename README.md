@@ -42,19 +42,26 @@ That's what turns "12 cancellations" into "52 minutes wasted, 55 saved" — a nu
 that tells you whether chasing confirmations is worth doing.
 
 **Open slots and the waitlist.** When a visit falls through, the vacated window
-becomes an open slot on that CHW's row, drawn as a dashed block. The shared waitlist
-panel sits alongside; where a waiting member fits an open slot, the slot names them
-and one click books them in. Ranking is deliberately explainable:
+becomes an open slot on that CHW's row, drawn as a dashed block *beneath the
+cancelled visit* rather than over it — the original stays on the board, because a
+row that silently drops the visit reads as though it was never scheduled. The
+shared waitlist panel sits alongside; where a waiting member fits, the slot names
+them.
 
-1. Anyone whose stated timeframe doesn't fit is ruled out.
-2. **Reachable people first.** Urgency can't beat geography — if the drive is longer
-   than the gap the CHW has (plus 10 minutes' grace), booking it wrecks the rest of
-   the route. Unreachable candidates still appear, flagged, at the bottom; that's a
-   human's call, not a silent exclusion.
+Clicking a slot opens the full waitlist, ranked, in two groups: **fits this slot**,
+and **everyone else**. Nobody is filtered out. Ranking is:
+
+1. People whose stated timeframe fits the window.
+2. **Reachable people.** Urgency can't beat geography — if the drive is longer than
+   the gap the CHW has (plus 10 minutes' grace), booking it wrecks the rest of the
+   route.
 3. Then clinically urgent, then nearest, then longest-waiting.
 
-Every suggestion shows its reasons, so the coordinator is never asked to trust a
-black box.
+Anyone who doesn't fit cleanly is still one click away, labelled "needs an
+override" with the specific reasons ("asked for morning — this slot is afternoon",
+"roughly 38 min drive, and the CHW only has 25 min"). The coordinator knows things
+the data doesn't; the tool's job is to order and explain, not to withhold. Every
+suggestion shows its reasons, so nobody is asked to trust a black box.
 
 **Members** (`/patients`) is sorted by no-show history — the people most likely to
 cost a trip, first — with today's outcome per member. Above it, a **CHW watch**

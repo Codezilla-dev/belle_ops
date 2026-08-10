@@ -10,7 +10,6 @@ class WaitlistPresenter
   def initialize(requests: RescheduleRequest.waiting_list.includes(:member).by_urgency, slots: [])
     @requests = requests.to_a
     @slots = slots
-    @matcher = WaitlistMatcherService.new(@requests)
   end
 
   def as_props
@@ -19,7 +18,7 @@ class WaitlistPresenter
 
   private
 
-  attr_reader :requests, :slots, :matcher
+  attr_reader :requests, :slots
 
   def request_props(request)
     placement = best_placement(request)
