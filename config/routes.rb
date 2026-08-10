@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root "dashboard#show"
 
+  get "patients", to: "members#index", as: :members
   post "slot_fills", to: "slot_fills#create"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
