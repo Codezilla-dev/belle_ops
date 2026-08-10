@@ -60,13 +60,13 @@ class WaitlistMatcherService
   end
 
   def reachable?(request, slot)
-    request.member.estimated_drive_minutes_to(slot.anchor) <= slot.slack_minutes
+    request.member.estimated_drive_minutes_to(slot.anchor) <= slot.drive_budget_minutes
   end
 
   def build_candidate(request, slot)
     km = distance_km(request, slot)
     drive_minutes = request.member.estimated_drive_minutes_to(slot.anchor)
-    reachable = drive_minutes <= slot.slack_minutes
+    reachable = drive_minutes <= slot.drive_budget_minutes
 
     Candidate.new(
       request: request,
@@ -87,7 +87,7 @@ class WaitlistMatcherService
     reasons << "Prefers #{request.preferred_timeframe}" unless request.prefers_any?
     unless reachable
       reasons << "Too far — needs #{request.member.estimated_drive_minutes_to(slot.anchor)} min " \
-                 "but the CHW only has #{slot.slack_minutes} min of slack"
+                 "but the CHW only has #{slot.drive_budget_minutes} min before they run late"
     end
     reasons
   end

@@ -46,7 +46,7 @@ class WaitlistPresenter
   # driven to in the time available, nearest first.
   def best_placement(request)
     slot = slots.select { |s| request.accepts_timeframe?(s.timeframe) }
-                .select { |s| request.member.estimated_drive_minutes_to(s.anchor) <= s.slack_minutes }
+                .select { |s| request.member.estimated_drive_minutes_to(s.anchor) <= s.drive_budget_minutes }
                 .min_by { |s| request.member.distance_km_to(s.anchor) || Float::INFINITY }
     return nil if slot.nil?
 

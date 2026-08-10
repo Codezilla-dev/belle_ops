@@ -6,6 +6,7 @@ import SlotFillModal from '../components/SlotFillModal'
 import WaitlistPanel from '../components/WaitlistPanel'
 import DaySummary, { Legend } from '../components/DaySummary'
 import DriveCostBadge from '../components/DriveCostBadge'
+import LiveFeedBar from '../components/LiveFeedBar'
 
 // Props arrive from Rails in snake_case (see CalendarDayPresenter); component
 // props below are camelCase as usual.
@@ -44,6 +45,8 @@ export default function Dashboard({
         <h1 className="text-xl font-semibold tracking-tight">Today&apos;s schedule</h1>
         <p className="text-sm text-slate-500">{dayLabel}</p>
       </div>
+
+      <LiveFeedBar />
 
       <DaySummary summary={summary} />
 

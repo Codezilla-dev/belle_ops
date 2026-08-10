@@ -67,7 +67,7 @@ class CalendarDayPresenter
       lane: lanes.fetch(slot.visit.id, 0),
       vacated_by: slot.member.name,
       timeframe: slot.timeframe,
-      slack_minutes: slot.slack_minutes,
+      slack_minutes: slot.drive_budget_minutes,
       candidates: candidates.map { |candidate| candidate_props(candidate) }
     }
   end

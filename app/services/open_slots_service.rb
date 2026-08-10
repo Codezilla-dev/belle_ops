@@ -11,12 +11,20 @@ class OpenSlotsService
   # measure from (first visit of the day, or a gap we can't compute).
   DEFAULT_SLACK_MINUTES = 30
 
+  # Arriving a few minutes behind schedule is normal and nobody minds. Without
+  # this the check is so strict that a member six minutes' drive too far gets
+  # ruled out of a slot that would have worked fine.
+  GRACE_MINUTES = 10
+
   Slot = Data.define(:visit, :technician, :starts_at, :ends_at, :timeframe, :member, :slack_minutes) do
     def id = visit.id
     def duration_minutes = visit.duration_minutes
 
     # Where the CHW was already headed — the anchor we measure candidates from.
     def anchor = member
+
+    # The most driving we can add and still call the slot workable.
+    def drive_budget_minutes = slack_minutes + GRACE_MINUTES
   end
 
   def initialize(visits)
