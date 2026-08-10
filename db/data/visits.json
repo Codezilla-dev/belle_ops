@@ -1,0 +1,1147 @@
+[
+  {
+    "appointment_id": "appt_10401",
+    "member": {
+      "name": "Dorothy M.",
+      "age": 81,
+      "prior_no_shows": 3
+    },
+    "household_id": "hh_882",
+    "address": {
+      "line1": "412 Maple Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.842,
+      "lng": -83.621
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T08:00:00-04:00",
+    "scheduled_end": "2026-06-29T08:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 12
+  },
+  {
+    "appointment_id": "appt_10405",
+    "member": {
+      "name": "Eugene T.",
+      "age": 74,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_884",
+    "address": {
+      "line1": "88 Cherry St",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.838,
+      "lng": -83.625
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T09:00:00-04:00",
+    "scheduled_end": "2026-06-29T09:45:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 8
+  },
+  {
+    "appointment_id": "appt_10431",
+    "member": {
+      "name": "Otis F.",
+      "age": 90,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_882",
+    "address": {
+      "line1": "412 Maple Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.842,
+      "lng": -83.621
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T08:50:00-04:00",
+    "scheduled_end": "2026-06-29T09:20:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 0
+  },
+  {
+    "appointment_id": "appt_10412",
+    "member": {
+      "name": "Harold P.",
+      "age": 76,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_905",
+    "address": {
+      "line1": "77 Oakdale Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.835,
+      "lng": -83.628
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T10:30:00-04:00",
+    "scheduled_end": "2026-06-29T11:15:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "cancelled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": {
+      "reason": "no_answer",
+      "channel": "on_site",
+      "cancelled_by": "technician",
+      "cancelled_at": "2026-06-29T10:34:00-04:00"
+    },
+    "drive_minutes_from_prev": 22
+  },
+  {
+    "appointment_id": "appt_10418",
+    "member": {
+      "name": "Mabel R.",
+      "age": 88,
+      "prior_no_shows": 1
+    },
+    "household_id": "hh_910",
+    "address": {
+      "line1": "320 Forsyth St",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.846,
+      "lng": -83.629
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T11:30:00-04:00",
+    "scheduled_end": "2026-06-29T12:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 9
+  },
+  {
+    "appointment_id": "appt_10423",
+    "member": {
+      "name": "Clarence W.",
+      "age": 79,
+      "prior_no_shows": 2
+    },
+    "household_id": "hh_912",
+    "address": {
+      "line1": "145 Spring St",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.84,
+      "lng": -83.618
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T13:00:00-04:00",
+    "scheduled_end": "2026-06-29T13:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 11
+  },
+  {
+    "appointment_id": "appt_10427",
+    "member": {
+      "name": "Lillian H.",
+      "age": 83,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_915",
+    "address": {
+      "line1": "56 Walnut St",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.837,
+      "lng": -83.616
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T14:00:00-04:00",
+    "scheduled_end": "2026-06-29T14:45:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "scheduled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 7
+  },
+  {
+    "appointment_id": "appt_10433",
+    "member": {
+      "name": "Ruth P.",
+      "age": 80,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_905",
+    "address": {
+      "line1": "77 Oakdale Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31201",
+      "lat": 32.835,
+      "lng": -83.628
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T15:00:00-04:00",
+    "scheduled_end": "2026-06-29T15:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Marcus B."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 10
+  },
+  {
+    "appointment_id": "appt_10440",
+    "member": {
+      "name": "Walter S.",
+      "age": 77,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_920",
+    "address": {
+      "line1": "100 Bass Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.918,
+      "lng": -83.69
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T08:30:00-04:00",
+    "scheduled_end": "2026-06-29T09:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Priya N."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 15
+  },
+  {
+    "appointment_id": "appt_10444",
+    "member": {
+      "name": "Geneva L.",
+      "age": 85,
+      "prior_no_shows": 4
+    },
+    "household_id": "hh_922",
+    "address": {
+      "line1": "250 Riverside Dr",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.925,
+      "lng": -83.685
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T09:30:00-04:00",
+    "scheduled_end": "2026-06-29T10:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Priya N."
+    },
+    "status": "no_show",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": {
+      "reason": "member_unavailable",
+      "channel": "on_site",
+      "cancelled_by": "technician",
+      "cancelled_at": "2026-06-29T09:38:00-04:00"
+    },
+    "drive_minutes_from_prev": 14
+  },
+  {
+    "appointment_id": "appt_10448",
+    "member": {
+      "name": "Frank D.",
+      "age": 72,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_924",
+    "address": {
+      "line1": "12 Wesleyan Dr",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.93,
+      "lng": -83.7
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T10:30:00-04:00",
+    "scheduled_end": "2026-06-29T11:15:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Priya N."
+    },
+    "status": "scheduled",
+    "confirmation_status": "wants_reschedule",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "reschedule",
+    "cancellation": null,
+    "drive_minutes_from_prev": 12
+  },
+  {
+    "appointment_id": "appt_10452",
+    "member": {
+      "name": "Bernice K.",
+      "age": 86,
+      "prior_no_shows": 1
+    },
+    "household_id": "hh_926",
+    "address": {
+      "line1": "75 Northside Dr",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.922,
+      "lng": -83.695
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T11:30:00-04:00",
+    "scheduled_end": "2026-06-29T12:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Priya N."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 9
+  },
+  {
+    "appointment_id": "appt_10456",
+    "member": {
+      "name": "Henry G.",
+      "age": 81,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_928",
+    "address": {
+      "line1": "300 Wimbish Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.915,
+      "lng": -83.705
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T13:00:00-04:00",
+    "scheduled_end": "2026-06-29T13:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Priya N."
+    },
+    "status": "scheduled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 13
+  },
+  {
+    "appointment_id": "appt_10460",
+    "member": {
+      "name": "Alice B.",
+      "age": 79,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_930",
+    "address": {
+      "line1": "410 Zebulon Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.928,
+      "lng": -83.71
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T14:00:00-04:00",
+    "scheduled_end": "2026-06-29T14:45:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Priya N."
+    },
+    "status": "scheduled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 8
+  },
+  {
+    "appointment_id": "appt_10464",
+    "member": {
+      "name": "Ramona V.",
+      "age": 84,
+      "prior_no_shows": 2
+    },
+    "household_id": "hh_932",
+    "address": {
+      "line1": "88 Wesleyan Station",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.931,
+      "lng": -83.702
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T15:00:00-04:00",
+    "scheduled_end": "2026-06-29T15:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Priya N."
+    },
+    "status": "cancelled",
+    "confirmation_status": "declined",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "declined",
+    "cancellation": {
+      "reason": "member_declined",
+      "channel": "voice",
+      "cancelled_by": "member_ivr",
+      "cancelled_at": "2026-06-28T16:10:00-04:00"
+    },
+    "drive_minutes_from_prev": 10
+  },
+  {
+    "appointment_id": "appt_10470",
+    "member": {
+      "name": "Pearl A.",
+      "age": 82,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_940",
+    "address": {
+      "line1": "55 Houston Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31206",
+      "lat": 32.795,
+      "lng": -83.665
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T08:30:00-04:00",
+    "scheduled_end": "2026-06-29T09:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Janelle W."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 16
+  },
+  {
+    "appointment_id": "appt_10474",
+    "member": {
+      "name": "Leon M.",
+      "age": 75,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_942",
+    "address": {
+      "line1": "120 Rocky Creek Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31206",
+      "lat": 32.788,
+      "lng": -83.672
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T09:30:00-04:00",
+    "scheduled_end": "2026-06-29T10:15:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Janelle W."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 9
+  },
+  {
+    "appointment_id": "appt_10478",
+    "member": {
+      "name": "Gladys T.",
+      "age": 89,
+      "prior_no_shows": 5
+    },
+    "household_id": "hh_944",
+    "address": {
+      "line1": "33 Anthony Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31206",
+      "lat": 32.792,
+      "lng": -83.678
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T10:30:00-04:00",
+    "scheduled_end": "2026-06-29T11:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Janelle W."
+    },
+    "status": "cancelled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": {
+      "reason": "hospitalized",
+      "channel": "voice",
+      "cancelled_by": "member",
+      "cancelled_at": "2026-06-29T07:50:00-04:00"
+    },
+    "drive_minutes_from_prev": 18
+  },
+  {
+    "appointment_id": "appt_10482",
+    "member": {
+      "name": "Curtis R.",
+      "age": 78,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_946",
+    "address": {
+      "line1": "210 Pio Nono Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31206",
+      "lat": 32.8,
+      "lng": -83.682
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T11:30:00-04:00",
+    "scheduled_end": "2026-06-29T12:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Janelle W."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 11
+  },
+  {
+    "appointment_id": "appt_10486",
+    "member": {
+      "name": "Estelle W.",
+      "age": 84,
+      "prior_no_shows": 1
+    },
+    "household_id": "hh_948",
+    "address": {
+      "line1": "14 Montpelier Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31206",
+      "lat": 32.785,
+      "lng": -83.668
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T13:00:00-04:00",
+    "scheduled_end": "2026-06-29T13:45:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Janelle W."
+    },
+    "status": "scheduled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 10
+  },
+  {
+    "appointment_id": "appt_10490",
+    "member": {
+      "name": "Nathaniel B.",
+      "age": 80,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_950",
+    "address": {
+      "line1": "9 Log Cabin Dr",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31206",
+      "lat": 32.797,
+      "lng": -83.675
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T14:00:00-04:00",
+    "scheduled_end": "2026-06-29T14:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Janelle W."
+    },
+    "status": "scheduled",
+    "confirmation_status": "wants_reschedule",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "reschedule",
+    "cancellation": null,
+    "drive_minutes_from_prev": 12
+  },
+  {
+    "appointment_id": "appt_10500",
+    "member": {
+      "name": "Vera C.",
+      "age": 86,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_960",
+    "address": {
+      "line1": "410 Ingleside Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31204",
+      "lat": 32.858,
+      "lng": -83.66
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T08:30:00-04:00",
+    "scheduled_end": "2026-06-29T09:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Tom R."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 14
+  },
+  {
+    "appointment_id": "appt_10504",
+    "member": {
+      "name": "Roy P.",
+      "age": 73,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_962",
+    "address": {
+      "line1": "88 Hillcrest Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31204",
+      "lat": 32.86,
+      "lng": -83.668
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T09:30:00-04:00",
+    "scheduled_end": "2026-06-29T10:15:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Tom R."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 8
+  },
+  {
+    "appointment_id": "appt_10508",
+    "member": {
+      "name": "Dorothy K.",
+      "age": 81,
+      "prior_no_shows": 2
+    },
+    "household_id": "hh_964",
+    "address": {
+      "line1": "23 Stanislaus Cir",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31204",
+      "lat": 32.855,
+      "lng": -83.672
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T10:30:00-04:00",
+    "scheduled_end": "2026-06-29T11:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Tom R."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 10
+  },
+  {
+    "appointment_id": "appt_10512",
+    "member": {
+      "name": "Sam H.",
+      "age": 77,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_966",
+    "address": {
+      "line1": "150 Napier Ave",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31204",
+      "lat": 32.862,
+      "lng": -83.675
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T11:30:00-04:00",
+    "scheduled_end": "2026-06-29T12:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Tom R."
+    },
+    "status": "cancelled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": {
+      "reason": "no_caregiver",
+      "channel": "text",
+      "cancelled_by": "member",
+      "cancelled_at": "2026-06-29T09:15:00-04:00"
+    },
+    "drive_minutes_from_prev": 13
+  },
+  {
+    "appointment_id": "appt_10516",
+    "member": {
+      "name": "Inez G.",
+      "age": 88,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_968",
+    "address": {
+      "line1": "77 Forest Hill Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31204",
+      "lat": 32.866,
+      "lng": -83.68
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T13:00:00-04:00",
+    "scheduled_end": "2026-06-29T13:45:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Tom R."
+    },
+    "status": "scheduled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 11
+  },
+  {
+    "appointment_id": "appt_10520",
+    "member": {
+      "name": "Earl D.",
+      "age": 79,
+      "prior_no_shows": 1
+    },
+    "household_id": "hh_970",
+    "address": {
+      "line1": "5 Lake Wood Dr",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31204",
+      "lat": 32.85,
+      "lng": -83.685
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T14:30:00-04:00",
+    "scheduled_end": "2026-06-29T15:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Tom R."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 9
+  },
+  {
+    "appointment_id": "appt_10530",
+    "member": {
+      "name": "Mattie L.",
+      "age": 84,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_980",
+    "address": {
+      "line1": "200 Russell Pkwy",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31088",
+      "lat": 32.595,
+      "lng": -83.65
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T09:00:00-04:00",
+    "scheduled_end": "2026-06-29T09:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Sofia G."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 35
+  },
+  {
+    "appointment_id": "appt_10534",
+    "member": {
+      "name": "Willie B.",
+      "age": 76,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_982",
+    "address": {
+      "line1": "45 Watson Blvd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31088",
+      "lat": 32.61,
+      "lng": -83.64
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T10:15:00-04:00",
+    "scheduled_end": "2026-06-29T11:00:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Sofia G."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 14
+  },
+  {
+    "appointment_id": "appt_10538",
+    "member": {
+      "name": "Cora N.",
+      "age": 90,
+      "prior_no_shows": 3
+    },
+    "household_id": "hh_984",
+    "address": {
+      "line1": "18 Green St",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31088",
+      "lat": 32.588,
+      "lng": -83.66
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T11:30:00-04:00",
+    "scheduled_end": "2026-06-29T12:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Sofia G."
+    },
+    "status": "no_show",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": {
+      "reason": "no_answer",
+      "channel": "on_site",
+      "cancelled_by": "technician",
+      "cancelled_at": "2026-06-29T11:36:00-04:00"
+    },
+    "drive_minutes_from_prev": 16
+  },
+  {
+    "appointment_id": "appt_10542",
+    "member": {
+      "name": "Otis B.",
+      "age": 82,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_986",
+    "address": {
+      "line1": "320 Elberta Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31088",
+      "lat": 32.58,
+      "lng": -83.655
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T13:00:00-04:00",
+    "scheduled_end": "2026-06-29T13:45:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Sofia G."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 20
+  },
+  {
+    "appointment_id": "appt_10546",
+    "member": {
+      "name": "Lucille R.",
+      "age": 85,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_988",
+    "address": {
+      "line1": "90 N Davis Dr",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31088",
+      "lat": 32.605,
+      "lng": -83.665
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T14:30:00-04:00",
+    "scheduled_end": "2026-06-29T15:15:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Sofia G."
+    },
+    "status": "scheduled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 13
+  },
+  {
+    "appointment_id": "appt_10550",
+    "member": {
+      "name": "Hazel M.",
+      "age": 83,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_990",
+    "address": {
+      "line1": "12 Tucker Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31220",
+      "lat": 32.94,
+      "lng": -83.72
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T08:30:00-04:00",
+    "scheduled_end": "2026-06-29T09:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Andre K."
+    },
+    "status": "completed",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 17
+  },
+  {
+    "appointment_id": "appt_10554",
+    "member": {
+      "name": "Floyd S.",
+      "age": 78,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_992",
+    "address": {
+      "line1": "60 Thomaston Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31220",
+      "lat": 32.935,
+      "lng": -83.73
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T09:30:00-04:00",
+    "scheduled_end": "2026-06-29T10:15:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Andre K."
+    },
+    "status": "scheduled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": null,
+    "drive_minutes_from_prev": 12
+  },
+  {
+    "appointment_id": "appt_10558",
+    "member": {
+      "name": "Beatrice J.",
+      "age": 87,
+      "prior_no_shows": 2
+    },
+    "household_id": "hh_994",
+    "address": {
+      "line1": "145 Forsyth Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.927,
+      "lng": -83.715
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T10:30:00-04:00",
+    "scheduled_end": "2026-06-29T11:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Andre K."
+    },
+    "status": "cancelled",
+    "confirmation_status": "no_reply",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": null,
+    "cancellation": {
+      "reason": "member_unavailable",
+      "channel": "text",
+      "cancelled_by": "member",
+      "cancelled_at": "2026-06-29T08:00:00-04:00"
+    },
+    "drive_minutes_from_prev": 14
+  },
+  {
+    "appointment_id": "appt_10562",
+    "member": {
+      "name": "Marvin T.",
+      "age": 74,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_996",
+    "address": {
+      "line1": "200 Bowman Rd",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.922,
+      "lng": -83.708
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T11:30:00-04:00",
+    "scheduled_end": "2026-06-29T12:15:00-04:00",
+    "visit_type": "foot_care",
+    "technician": {
+      "name": "Andre K."
+    },
+    "status": "scheduled",
+    "confirmation_status": "confirmed",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "confirmed",
+    "cancellation": null,
+    "drive_minutes_from_prev": 10
+  },
+  {
+    "appointment_id": "appt_10566",
+    "member": {
+      "name": "Goldie P.",
+      "age": 81,
+      "prior_no_shows": 0
+    },
+    "household_id": "hh_998",
+    "address": {
+      "line1": "33 Wesleyan Dr",
+      "city": "Macon",
+      "state": "GA",
+      "zip": "31210",
+      "lat": 32.93,
+      "lng": -83.701
+    },
+    "timezone": "America/New_York",
+    "scheduled_start": "2026-06-29T13:00:00-04:00",
+    "scheduled_end": "2026-06-29T13:45:00-04:00",
+    "visit_type": "follow_up",
+    "technician": {
+      "name": "Andre K."
+    },
+    "status": "scheduled",
+    "confirmation_status": "wants_reschedule",
+    "reminder_sent_at": "2026-06-28T14:00:00-04:00",
+    "reminder_response": "reschedule",
+    "cancellation": null,
+    "drive_minutes_from_prev": 9
+  }
+]
