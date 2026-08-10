@@ -6,6 +6,7 @@ class CalendarDayPresenter
   def initialize(day: Belle::CURRENT_DAY)
     @day = day
     @visits = Visit.on_day(day).includes(:member, :technician).chronological.to_a
+    @costs = DriveCostService.new(@visits).by_technician
   end
 
   def as_props
@@ -23,7 +24,7 @@ class CalendarDayPresenter
 
   private
 
-  attr_reader :day, :visits
+  attr_reader :day, :visits, :costs
 
   def hours
     (Belle::DAY_START_HOUR..Belle::DAY_END_HOUR).map do |hour|
@@ -42,11 +43,23 @@ class CalendarDayPresenter
         id: technician.id,
         name: technician.name,
         lane_count: lanes.values.max.to_i + 1,
+        drive: drive_props(technician),
         visits: technician_visits.map do |visit|
           VisitPresenter.new(visit).as_props.merge(lane: lanes.fetch(visit.id, 0))
         end
       }
     end
+  end
+
+  def drive_props(technician)
+    cost = costs[technician.id]
+    return { spent_minutes: 0, saved_minutes: 0, wasted_minutes: 0 } if cost.nil?
+
+    {
+      spent_minutes: cost.spent_minutes,
+      saved_minutes: cost.saved_minutes,
+      wasted_minutes: cost.wasted_minutes
+    }
   end
 
   # Visits at one address can overlap (a CHW sees both members of a household in
@@ -65,8 +78,12 @@ class CalendarDayPresenter
   # The numbers the coordinator scans first: what still needs chasing, and how
   # much of the day has already gone sideways.
   def summary
+    day_cost = DriveCostService.new(visits).totals
+
     {
       total: visits.length,
+      drive_wasted_minutes: day_cost.wasted_minutes,
+      drive_saved_minutes: day_cost.saved_minutes,
       completed: visits.count { |visit| visit.status == "completed" },
       fell_through: visits.count(&:fell_through?),
       unconfirmed: visits.count { |visit| visit.status == "scheduled" && !visit.confirmed? },

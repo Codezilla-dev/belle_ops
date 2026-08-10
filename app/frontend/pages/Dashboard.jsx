@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import CalendarGrid from '../components/CalendarGrid'
 import VisitModal from '../components/VisitModal'
 import DaySummary, { Legend } from '../components/DaySummary'
+import DriveCostBadge from '../components/DriveCostBadge'
 
 // Props arrive from Rails in snake_case (see CalendarDayPresenter); component
 // props below are camelCase as usual.
@@ -38,6 +39,7 @@ export default function Dashboard({
         nowOffsetMinutes={nowOffsetMinutes}
         nowLabel={nowLabel}
         onSelectVisit={(visit) => setSelectedId(visit.id)}
+        renderRowFooter={(technician) => <DriveCostBadge drive={technician.drive} />}
       />
 
       <Legend />
